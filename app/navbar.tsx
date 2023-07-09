@@ -21,16 +21,16 @@ export default function Navbar() {
                 <div className={`${open ? "block" : "hidden"} w-full md:block md:w-auto`} id="navbar-default">
                     <ul className="font-medium flex flex-col md:flex-row mt-5 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                         <li>
-                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent hover:border-primio transition-colors" aria-current="page">Home</a>
+                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors" aria-current="page">Home</a>
                         </li>
                         <li>
-                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent hover:border-primio transition-colors">About</a>
+                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">About</a>
                         </li>
                         <li>
-                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent hover:border-primio transition-colors">Services</a>
+                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">Services</a>
                         </li>
                         <li>
-                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent hover:border-primio transition-colors">Contact</a>
+                            <a href="#" className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">Contact</a>
                         </li>
                     </ul>
                 </div>

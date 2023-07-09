@@ -16,6 +16,8 @@ module.exports = {
       },
       fontFamily: {
         Ubuntu: ["Ubuntu"],
+        PlayfairDisaply: ["PlayfairDisplay"],
+        Montserrat: ["Montserrat"],
       },
     },
   },
