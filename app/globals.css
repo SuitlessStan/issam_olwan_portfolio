@@ -33,7 +33,7 @@
   padding: 1rem;
   position: relative;
   /* width: 40rem; */
-  height: 79vh;
+  height: 75vh;
   border-radius: 2%;
 }
 
@@ -67,7 +67,7 @@
   font-family: monospace;
   overflow: hidden;
   border-right: 0.15em solid #5c62ec; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;

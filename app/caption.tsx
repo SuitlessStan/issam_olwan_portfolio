@@ -30,12 +30,13 @@ export default function Caption() {
 
   return (
     <>
-      <div className="container w-full h-full mx-auto text-center border border-solid border-gray-400 rounded p-5 md:w-5/6">
+      <div className="container w-full h-full mx-auto text-center rounded p-5 md:w-5/6">
         {quotes.length > 0 && (
           <Carousel
             className="w-full h-full p-0"
             autoPlay={true}
             infiniteLoop
+            interval={8000}
             showArrows={false}
             showIndicators={false}
             showThumbs={false}
@@ -47,9 +48,9 @@ export default function Caption() {
                   key={quote.text}>
                   <>
                     {quote.text}
-                    <span className="text-sm font-Montserrat italic">{`- ${
-                      quote.author ? quote.author : ""
-                    }`}</span>
+                    <span className="text-sm font-Montserrat italic">{`
+                    ${quote.author ? " " + quote.author : " "}
+                    `}</span>
                   </>
                 </span>
               )
