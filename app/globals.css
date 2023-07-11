@@ -5,16 +5,19 @@
 @font-face {
   font-family: "Ubuntu";
   src: url("../public/fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "PlayfairDisplay";
   src: url("../public/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat";
   src: url("../public/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 /* Homepage */

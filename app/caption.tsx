@@ -30,7 +30,7 @@ export default function Caption() {
 
   return (
     <>
-      <div className="container w-full h-full mx-auto text-center rounded p-5 md:w-5/6">
+      <div className="container w-full h-full my-2 mx-auto text-center rounded p-5 md:w-5/6">
         {quotes.length > 0 && (
           <Carousel
             className="w-full h-full p-0"
@@ -44,7 +44,7 @@ export default function Caption() {
             {quotes.map((quote: Quote) => {
               return (
                 <span
-                  className="text-2xl block p-0 text-primio font-PlayfairDisaply py-0"
+                  className="text-2xl block p-0 dark:text-primio text-black font-PlayfairDisaply py-0"
                   key={quote.text}>
                   <>
                     {quote.text}

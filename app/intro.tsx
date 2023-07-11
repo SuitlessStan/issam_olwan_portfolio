@@ -14,10 +14,10 @@ export default function Intro() {
           </div>
         </div>
         <div className="buttons flex flex-col md:flex-row md:gap-1 gap-5 justify-center items-center z-10">
-          <button className="btn text-lg bg:black border border-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
+          <button className="btn text-lg bg:black border dark:border-white text-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
             See projects
           </button>
-          <button className="btn text-lg flex border border-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
+          <button className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
             <svg
               width="21"
               height="20"

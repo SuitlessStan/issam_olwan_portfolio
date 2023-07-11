@@ -4,7 +4,7 @@ import Image from "next/image"
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   return (
-    <nav className="bg-dark">
+    <nav className="dark:bg-dark">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center">
           <Image
@@ -58,7 +58,7 @@ export default function Navbar() {
         <div
           className={`${open ? "block" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-default">
-          <ul className="font-medium flex flex-col md:flex-row mt-5 rounded-lg md:space-x-8 md:mt-0 dark:bg-gray-900 md:bg-black border-gray-700">
+          <ul className="font-medium flex flex-col md:flex-row mt-5 rounded-lg text-center md:space-x-8 md:mt-0 dark:bg-primio dark:md:bg-black border-gray-700">
             <li>
               <a
                 href="#"
@@ -91,7 +91,7 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      <hr className="border-black" />
+      <hr className="dark:border-white border-black" />
     </nav>
   )
 }
