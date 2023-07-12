@@ -38,7 +38,7 @@ const MatrixEffect: React.FC = () => {
     "y",
     "z",
   ]
-  const maxCharCount = 100
+  // const maxCharCount = 100
   const fontSize = 10
   const fallingCharArr: Point[] = []
 
@@ -119,7 +119,7 @@ const MatrixEffect: React.FC = () => {
       <canvas
         style={{
           height: "80vh",
-          width: "90vw",
+          width: "95vw",
           zIndex: -1000,
         }}
         ref={canvasRef}
