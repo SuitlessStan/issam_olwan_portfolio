@@ -1,4 +1,4 @@
-import MatrixEffect from "./matrix-effect"
+import MatrixEffect from "../../components/matrix-effect"
 
 export default function Intro() {
   return (

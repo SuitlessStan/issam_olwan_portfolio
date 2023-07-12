@@ -1,20 +1,47 @@
+"use client"
+
 import { useState } from "react"
 import Image from "next/image"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const date = new Date()
+  const time = date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    hour12: false,
+    minute: "2-digit",
+  })
+
+  const timeOfDay = () => {
+    const currentHour = date.getHours()
+
+    if (currentHour >= 6 && currentHour < 20) {
+      return "sunny"
+    }
+    return "not sunny"
+  }
+
   return (
     <nav className="dark:bg-dark">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="#" className="flex items-center">
-          <Image
-            src="/images/convoluted.png"
-            className="rounded border border-primio"
-            alt="logo"
-            width={40}
-            height={0}
-          />
-        </a>
+        <span className="flex items-center justify-center gap-4">
+          <span className="">
+            {timeOfDay() == "sunny" ? (
+              <Image
+                className="dark:bg-primio rounded bg-black w-12"
+                src="/images/sun.svg"
+                alt="sun_gif"
+                width={22}
+                height={22}
+              />
+            ) : (
+              <></>
+            )}
+          </span>
+          <div className="flex flex-col">
+            <span className="text-sm">{time}</span>
+          </div>
+        </span>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
