@@ -119,7 +119,7 @@ const MatrixEffect: React.FC = () => {
       <canvas
         style={{
           height: "80vh",
-          width: "95vw",
+          width: "98vw",
           zIndex: -1000,
         }}
         ref={canvasRef}
