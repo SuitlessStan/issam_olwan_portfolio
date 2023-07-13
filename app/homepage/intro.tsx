@@ -2,7 +2,7 @@ import MatrixEffect from "../../components/matrix-effect"
 
 export default function Intro() {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center" id="intro">
       <MatrixEffect />
       <div className="absolute">
         <div className="intro-text my-4">
@@ -31,7 +31,7 @@ export default function Intro() {
                 fill="white"
               />
             </svg>
-            download CV
+            Download CV
           </button>
         </div>
       </div>

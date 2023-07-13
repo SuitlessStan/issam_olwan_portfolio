@@ -44,7 +44,7 @@ export default function Caption() {
             {quotes.map((quote: Quote) => {
               return (
                 <span
-                  className="text-2xl block p-0 dark:text-primio text-black font-PlayfairDisaply py-0"
+                  className="text-3xl block p-0 dark:text-primio text-black font-PlayfairDisaply py-0"
                   key={quote.text}>
                   <>
                     {quote.text}

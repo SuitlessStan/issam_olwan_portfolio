@@ -1,4 +1,5 @@
 import Image from "next/image"
+import ProfilePicture from "../../public/images/profile-picture.jpg"
 
 export default function AboutMe() {
   return (
@@ -8,7 +9,8 @@ export default function AboutMe() {
           <Image
             className="rounded w-full h-full"
             alt="profile_picture"
-            src="/images/profile-picture.jpg"
+            src={ProfilePicture}
+            placeholder="blur"
             width={300}
             height={300}
           />

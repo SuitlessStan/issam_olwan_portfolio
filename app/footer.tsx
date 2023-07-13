@@ -4,7 +4,6 @@ import {
   faFacebook,
   faMedium,
   faLinkedin,
-  faInstagram,
 } from "@fortawesome/free-brands-svg-icons"
 
 export default function Footer() {
@@ -16,9 +15,7 @@ export default function Footer() {
           <span className="block text-2xl dark:text-white text-black">Homepage</span>
           <ul className="mt-2">
             <li>
-              <a href="#" target="_blank">
-                Home
-              </a>
+              <a href="#intro">Home</a>
             </li>
             <li>
               <a href="/about" target="_blank">
@@ -36,7 +33,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a href="https://www.linkedin.com/in/essam-olwan-44a783251/" target="_blank">
                 Linkedin
               </a>
             </li>
@@ -48,22 +45,22 @@ export default function Footer() {
           </span>
           <ul className="flex flex-col md:flex-row gap-5 mt-2">
             <li>
-              <a href="#" target="_blank">
+              <a href="https://www.facebook.com/esam.olwan/" target="_blank">
                 <FontAwesomeIcon icon={faFacebook} size="lg" />
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a href="https://twitter.com/esamolwan" target="_blank">
                 <FontAwesomeIcon icon={faTwitter} size="lg" />
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a href="https://medium.com/@esamolwan" target="_blank">
                 <FontAwesomeIcon icon={faMedium} size="lg" />
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a href="https://www.linkedin.com/in/essam-olwan-44a783251/" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} size="lg" />
               </a>
             </li>
