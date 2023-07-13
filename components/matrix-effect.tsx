@@ -83,7 +83,7 @@ const MatrixEffect: React.FC = () => {
         point.value = charArr[randomInt(0, charArr.length - 1)].toUpperCase()
         point.speed = randomFloat(1, 5)
 
-        ctx.fillStyle = "#0F0"
+        ctx.fillStyle = "#3d8c40"
         ctx.font = fontSize + "px san-serif"
         ctx.fillText(point.value, point.x, point.y)
 

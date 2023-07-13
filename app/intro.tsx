@@ -1,4 +1,4 @@
-import MatrixEffect from "../../components/matrix-effect"
+import MatrixEffect from "../components/matrix-effect"
 
 export default function Intro() {
   return (
@@ -10,7 +10,7 @@ export default function Intro() {
             <span className="text-primio">Issam Olwan</span>
           </h1>
           <div className="typewriter">
-            <h2 className="text-xl md:text-4xl">Fullstack Software Engineer</h2>
+            <h2 className="text-lg dark:text-xl  md:text-4xl">Fullstack Software Engineer</h2>
           </div>
         </div>
         <div className="buttons flex flex-col md:flex-row md:gap-1 gap-5 justify-center items-center z-10">

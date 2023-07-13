@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -87,33 +88,33 @@ export default function Navbar() {
           id="navbar-default">
           <ul className="font-medium flex flex-col md:flex-row mt-5 rounded-lg text-center md:space-x-8 md:mt-0 dark:bg-primio dark:md:bg-black border-gray-700">
             <li>
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors"
                 aria-current="page">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/about"
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/services"
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

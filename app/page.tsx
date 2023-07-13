@@ -1,17 +1,19 @@
 "use client"
-import Navbar from "./homepage/navbar"
-import Intro from "./homepage/intro"
+import Navbar from "./navbar"
+import Intro from "./intro"
 import Caption from "../components/caption"
-import AboutMe from "./homepage/about-me"
+import AboutMe from "./about-me"
 
 export default function Home() {
   return (
     <>
       <main>
         <Intro />
+        <Caption />
       </main>
-      <Caption />
-      <AboutMe />
+      <section>
+        <AboutMe />
+      </section>
     </>
   )
 }

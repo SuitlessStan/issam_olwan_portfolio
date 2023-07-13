@@ -1,10 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faTwitter,
-  faFacebook,
-  faMedium,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons"
+import { faTwitter, faFacebook, faMedium, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -15,12 +11,10 @@ export default function Footer() {
           <span className="block text-2xl dark:text-white text-black">Homepage</span>
           <ul className="mt-2">
             <li>
-              <a href="#intro">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="/about" target="_blank">
-                About
-              </a>
+              <Link href="/about">About</Link>
             </li>
           </ul>
         </div>
@@ -28,14 +22,10 @@ export default function Footer() {
           <span className="block text-2xl dark:text-white text-black">Contact me</span>
           <ul className="mt-2">
             <li>
-              <a href="/contact" target="_blank">
-                Contact page
-              </a>
+              <Link href="/contact">Contact me</Link>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/essam-olwan-44a783251/" target="_blank">
-                Linkedin
-              </a>
+              <Link href="https://www.linkedin.com/in/essam-olwan-44a783251/">Linkedin</Link>
             </li>
           </ul>
         </div>
@@ -45,24 +35,24 @@ export default function Footer() {
           </span>
           <ul className="flex flex-col md:flex-row gap-5 mt-2">
             <li>
-              <a href="https://www.facebook.com/esam.olwan/" target="_blank">
-                <FontAwesomeIcon icon={faFacebook} size="lg" />
-              </a>
+              <Link href="https://www.facebook.com/esam.olwan/" target="_blank">
+                <FontAwesomeIcon icon={faFacebook} size="xl" className="hover:text-primio" />
+              </Link>
             </li>
             <li>
-              <a href="https://twitter.com/esamolwan" target="_blank">
-                <FontAwesomeIcon icon={faTwitter} size="lg" />
-              </a>
+              <Link href="https://twitter.com/esamolwan" target="_blank">
+                <FontAwesomeIcon icon={faTwitter} size="xl" className="hover:text-primio" />
+              </Link>
             </li>
             <li>
-              <a href="https://medium.com/@esamolwan" target="_blank">
-                <FontAwesomeIcon icon={faMedium} size="lg" />
-              </a>
+              <Link href="https://medium.com/@esamolwan" target="_blank">
+                <FontAwesomeIcon icon={faMedium} size="xl" className="hover:text-primio" />
+              </Link>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/essam-olwan-44a783251/" target="_blank">
-                <FontAwesomeIcon icon={faLinkedin} size="lg" />
-              </a>
+              <Link href="https://www.linkedin.com/in/essam-olwan-44a783251/" target="_blank">
+                <FontAwesomeIcon icon={faLinkedin} size="xl" className="hover:text-primio" />
+              </Link>
             </li>
           </ul>
         </div>
