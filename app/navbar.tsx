@@ -46,7 +46,10 @@ export default function Navbar() {
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            setOpen(!open)
+            setOpen(!open)
+          }}
           className="inline-flex items-center justify-center text-sm h-8 w-8 rounded-lg md:hidden"
           aria-controls="navbar-default"
           aria-expanded={open ? "true" : "false"}>

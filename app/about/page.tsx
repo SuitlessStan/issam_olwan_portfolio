@@ -5,8 +5,7 @@ import ProfilePicture from "../../public/images/profile-picture.jpg"
 import { faDocker, faLinux, faReact, faNodeJs } from "@fortawesome/free-brands-svg-icons"
 import { faServer, faCode } from "@fortawesome/free-solid-svg-icons"
 import Card from "@/components/card"
-import { useState, useEffect } from "react"
-import { useRouter, usePathname } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 export default function AboutMe() {
   const skills = [
