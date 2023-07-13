@@ -1,8 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import ProfilePicture from "../../public/images/profile-picture.jpg"
 import { faDocker, faLinux, faReact, faNodeJs } from "@fortawesome/free-brands-svg-icons"
 import { faServer, faCode } from "@fortawesome/free-solid-svg-icons"
 import Card from "@/components/card"
+import { useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
 export default function AboutMe() {
   const skills = [
@@ -43,12 +47,18 @@ export default function AboutMe() {
         "I have extensive experience in building web applications using TypeScript for both the frontend and backend. With my expertise, I have successfully developed robust and scalable applications, leveraging the benefits of static typing, enhanced code maintainability, and improved developer productivity. As a full-stack developer, I am proficient in using TypeScript to build interactive user interfaces on the frontend, implementing component-based architectures, and leveraging frameworks such as React.js. On the backend, I have applied TypeScript to develop APIs, implement data models, and interact with databases efficiently. My experience in building web applications with TypeScript encompasses the entire development stack, enabling me to create seamless and cohesive applications with enhanced reliability and maintainability.",
     },
   ]
+
+  const pathName = usePathname()
   return (
     <>
+      {/* About me */}
       <div className="container flex flex-col md:flex-row gap-5 mx-auto p-5" id="about-me">
-        <div className="profile-image flex justify-center items-center px-5 md:hidden">
+        <div
+          className={`profile-image flex justify-center items-center px-5 ${
+            pathName == "/about" ? " " : "md:hidden"
+          }`}>
           <Image
-            className="rounded w-full h-full"
+            className="rounded w-full h-full md:h-1/2"
             alt="profile_picture"
             src={ProfilePicture}
             placeholder="blur"
@@ -117,7 +127,7 @@ export default function AboutMe() {
           </button>
         </div>
       </div>
-
+      {/* Skills */}
       <div className="my-4 container mx-auto px-4">
         <span className="block text-3xl text-center my-5">My Skills</span>
         <div className="grid grid-cols-12 gap-3">
