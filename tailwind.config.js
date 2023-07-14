@@ -13,11 +13,15 @@ module.exports = {
       },
       colors: {
         primio: "#5C62EC",
+        Rellenos: "#1C1E22",
+        Gris: "#A0A0A1",
+        Borders: "#26292D",
       },
       fontFamily: {
         Ubuntu: ["Ubuntu"],
         PlayfairDisaply: ["PlayfairDisplay"],
         Montserrat: ["Montserrat"],
+        DMSans:["DMSans"]
       },
     },
   },

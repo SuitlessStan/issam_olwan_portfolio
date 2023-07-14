@@ -20,6 +20,12 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "DMSans";
+  src: url("../public/fonts/DMSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
 /* Scrollbar */
 
 /* width */
