@@ -3,10 +3,13 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const date = new Date()
+  const router = useRouter()
+  const href = "/"
   const time = date.toLocaleTimeString("en-US", {
     hour: "2-digit",
     hour12: false,
@@ -22,21 +25,38 @@ export default function Navbar() {
     return "not sunny"
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault()
+    router.push(href)
+  }
+
   return (
     <nav className="dark:bg-dark">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <span className="flex items-center justify-center gap-4">
           <span className="">
             {timeOfDay() == "sunny" ? (
-              <Image
-                className="dark:bg-primio rounded bg-black w-12"
-                src="/images/sun.svg"
-                alt="sun_gif"
-                width={22}
-                height={22}
-              />
+              <Link href={href} onClick={handleClick}>
+                <Image
+                  className="dark:bg-primio rounded w-12"
+                  src="/images/sun.svg"
+                  alt="sun_gif"
+                  width={22}
+                  height={22}
+                />
+              </Link>
             ) : (
-              <></>
+              <>
+                <Link href={href} onClick={handleClick}>
+                  <Image
+                    className="dark:bg-primio rounded w-12"
+                    src="/images/moon.svg"
+                    alt="moon_gif"
+                    width={22}
+                    height={22}
+                  />
+                </Link>
+              </>
             )}
           </span>
           <div className="flex flex-col">

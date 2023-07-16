@@ -8,14 +8,14 @@ export default function ContactMe() {
           message!
         </span>
 
-        <div className="container my-5 bg-Borders px-4 rounded mx-auto md:w-2/5">
+        <div className="container my-5 dark:bg-Borders dark:text-white text-black bg-white px-4 rounded mx-auto md:w-2/5">
           <form action="#" className="py-5 flex flex-col gap-3">
             <div className="input flex flex-col gap-3 justify-center items-start">
               <label htmlFor="number" className="font-DMSans">
                 Your number
               </label>
               <input
-                className="w-full bg-Rellenos py-4 px-4 border border-Gris rounded"
+                className="w-full dark:bg-Rellenos py-4 px-4 border border-Gris rounded"
                 type="number"
                 name="phone_number"
                 placeholder="+"
@@ -26,7 +26,7 @@ export default function ContactMe() {
                 Your email
               </label>
               <input
-                className="w-full bg-Rellenos py-4 px-4 border border-Gris rounded"
+                className="w-full dark:bg-Rellenos py-4 px-4 border border-Gris rounded"
                 type="email"
                 name="email"
                 placeholder="something@somewhat.com"
@@ -37,7 +37,7 @@ export default function ContactMe() {
                 Your message
               </label>
               <textarea
-                className="w-full bg-Rellenos py-4 px-4 border border-Gris rounded"
+                className="w-full dark:bg-Rellenos py-4 px-4 border border-Gris rounded"
                 rows={4}
                 color="50"
                 name="message"
@@ -45,7 +45,7 @@ export default function ContactMe() {
                 placeholder="Your message"></textarea>
             </div>
             <div className="input flex flex-col gap-3 justify-center items-start">
-              <button type="submit" className="w-full bg-primio py-4 px-4 rounded">
+              <button type="submit" className="w-full bg-primio py-4 px-4 rounded text-white dark:text-black">
                 Send
               </button>
             </div>
