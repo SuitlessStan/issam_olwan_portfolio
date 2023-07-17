@@ -30,8 +30,12 @@ export default function Navbar() {
     router.push(href)
   }
 
+  const handleLinkClick = () => {
+    setOpen(false)
+  }
+
   return (
-    <nav className="dark:bg-dark">
+    <nav className="dark:bg-black bg-white fixed w-full z-10 top-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <span className="flex items-center justify-center gap-4">
           <span className="">
@@ -49,7 +53,7 @@ export default function Navbar() {
               <>
                 <Link href={href} onClick={handleClick}>
                   <Image
-                    className="dark:bg-primio rounded w-12"
+                    className="dark:bg-primio rounded h-8 w-9"
                     src="/images/moon.svg"
                     alt="moon_gif"
                     width={22}
@@ -67,7 +71,6 @@ export default function Navbar() {
           data-collapse-toggle="navbar-default"
           type="button"
           onClick={() => {
-            setOpen(!open)
             setOpen(!open)
           }}
           className="inline-flex items-center justify-center text-sm h-8 w-8 rounded-lg md:hidden"
@@ -113,6 +116,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
+                onClick={handleLinkClick}
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors"
                 aria-current="page">
                 Home
@@ -121,6 +125,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/about"
+                onClick={handleLinkClick}
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 About
               </Link>
@@ -128,6 +133,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/services"
+                onClick={handleLinkClick}
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 Services
               </Link>
@@ -135,6 +141,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/contact"
+                onClick={handleLinkClick}
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 Contact
               </Link>
