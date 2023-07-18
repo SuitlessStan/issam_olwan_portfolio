@@ -1,3 +1,5 @@
+"use client"
+
 export default function ContactMe() {
   return (
     <>
@@ -9,7 +11,11 @@ export default function ContactMe() {
         </span>
 
         <div className="container my-5 dark:bg-Borders dark:text-white text-black bg-white px-4 rounded mx-auto md:w-2/5">
-          <form action="#" className="py-5 flex flex-col gap-3">
+          <form
+            action="http://localhost:3000/api/contact"
+            method="POST"
+            encType="application/x-www-form-urlencoded"
+            className="py-5 flex flex-col gap-3">
             <div className="input flex flex-col gap-3 justify-center items-start">
               <label htmlFor="number" className="font-DMSans">
                 Your number
@@ -45,7 +51,10 @@ export default function ContactMe() {
                 placeholder="Your message"></textarea>
             </div>
             <div className="input flex flex-col gap-3 justify-center items-start">
-              <button type="submit" className="w-full bg-primio py-4 px-4 rounded text-white dark:text-black">
+              <button
+                type="submit"
+                // onClick={(e) => e.preventDefault()}
+                className="w-full bg-primio py-4 px-4 rounded text-white dark:text-black">
                 Send
               </button>
             </div>

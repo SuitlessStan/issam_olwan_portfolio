@@ -21,9 +21,13 @@ module.exports = {
         Ubuntu: ["Ubuntu"],
         PlayfairDisaply: ["PlayfairDisplay"],
         Montserrat: ["Montserrat"],
-        DMSans:["DMSans"]
+        DMSans: ["DMSans"],
       },
     },
+  },
+  api: {
+    bodyParser: false,
+    externalResolver: true,
   },
   plugins: [],
 }
