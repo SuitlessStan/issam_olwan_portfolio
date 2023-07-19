@@ -6,6 +6,36 @@ export default function ContactMe() {
   const [loading, setLoading] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
 
+  const [phoneNumber, setPhoneNumber] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
+  const [phoneNumberError, setPhoneNumberError] = useState<string | null>(null)
+  const [emailError, setEmailError] = useState<string | null>(null)
+  const [messageError, setMessageError] = useState<string | null>(null)
+
+  const validatePhoneNumber = (number: string) => {
+    if (!number || number.length < 5) {
+      return "Please enter a valid phone number."
+    }
+    return null
+  }
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address."
+    }
+    return null
+  }
+
+  const validateMessage = (message: string) => {
+    if (!message.trim()) {
+      return "Please enter a message."
+    }
+    return null
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
@@ -56,7 +86,13 @@ export default function ContactMe() {
                 type="number"
                 name="phone_number"
                 placeholder="+"
+                value={phoneNumber}
+                onChange={(e) => {
+                  setPhoneNumber(e.target.value)
+                  setPhoneNumberError(validatePhoneNumber(e.target.value))
+                }}
               />
+              {phoneNumberError && <span className="error text-red-400">{phoneNumberError}</span>}
             </div>
             <div className="input flex flex-col gap-3 justify-center items-start">
               <label htmlFor="name" className="font-DMSans">
@@ -67,7 +103,13 @@ export default function ContactMe() {
                 type="email"
                 name="email"
                 placeholder="something@somewhat.com"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  setEmailError(validateEmail(e.target.value))
+                }}
               />
+              {emailError && <span className="error text-red-400">{emailError}</span>}
             </div>
             <div className="input flex flex-col gap-3 justify-center items-start">
               <label htmlFor="name" className="font-DMSans">
@@ -79,7 +121,13 @@ export default function ContactMe() {
                 color="50"
                 name="message"
                 style={{ resize: "none" }}
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value)
+                  setMessageError(validateMessage(e.target.value))
+                }}
                 placeholder="Your message"></textarea>
+              {messageError && <span className="error text-red-400">{messageError}</span>}
             </div>
             <div className="input flex flex-col gap-3 justify-center items-start">
               <button
