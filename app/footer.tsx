@@ -7,7 +7,7 @@ export default function Footer() {
     <>
       <hr />
       <div className="text-center flex flex-col md:flex-row gap-10 justify-center items-center p-5">
-        <div className="introduction">
+        {/* <div className="introduction">
           <span className="block text-2xl dark:text-white text-black">Homepage</span>
           <ul className="mt-2">
             <li>
@@ -28,11 +28,11 @@ export default function Footer() {
               <Link href="https://www.linkedin.com/in/essam-olwan-44a783251/">Linkedin</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
         <div className="socials">
-          <span className="block text-2xl relative bottom-3 dark:text-white text-black">
+          {/* <span className="block text-2xl relative bottom-3 dark:text-white text-black">
             Socials
-          </span>
+          </span> */}
           <ul className="flex flex-col md:flex-row gap-5 mt-2">
             <li>
               <Link href="https://www.facebook.com/esam.olwan/" target="_blank">
@@ -57,7 +57,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <hr className="w-1/2 mx-auto my-3" />
+      {/* <hr className="w-1/2 mx-auto my-3" /> */}
       <span className="block text-sm text-center">&copy; 2023 Technos Sophistes</span>
     </>
   )

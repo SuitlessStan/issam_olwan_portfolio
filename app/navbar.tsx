@@ -53,7 +53,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className="dark:bg-black bg-white fixed w-full z-10 top-0">
+    <nav className="dark:bg-black bg-white fixed w-full z-10 top-0 opacity-75">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <span className="flex items-center justify-center gap-4">
           <span className="">
