@@ -1,6 +1,12 @@
 "use client"
+import axios from "axios"
 
 export default function ContactMe() {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    // await axios.post(http://localhost:3000/api/contact)
+  }
   return (
     <>
       <div className="mx-2">
@@ -14,7 +20,7 @@ export default function ContactMe() {
           <form
             action="http://localhost:3000/api/contact"
             method="POST"
-            encType="application/x-www-form-urlencoded"
+            onSubmit={handleSubmit}
             className="py-5 flex flex-col gap-3">
             <div className="input flex flex-col gap-3 justify-center items-start">
               <label htmlFor="number" className="font-DMSans">

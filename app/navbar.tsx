@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [mode, setMode] = useState<string>()
   const date = new Date()
   const router = useRouter()
   const href = "/"
@@ -33,6 +34,23 @@ export default function Navbar() {
   const handleLinkClick = () => {
     setOpen(false)
   }
+
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    setMode(prefersDarkMode ? "dark" : "light")
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    const handleChange = (event: MediaQueryListEvent) => {
+      const colorScheme = event.matches ? "dark" : "light"
+      setMode(colorScheme)
+    }
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange)
+    }
+
+    return () => {}
+  }, [])
 
   return (
     <nav className="dark:bg-black bg-white fixed w-full z-10 top-0">
@@ -86,7 +104,7 @@ export default function Navbar() {
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4 6H20M4 12H20M13 18H20"
-                stroke="white"
+                stroke={`${mode === "dark" ? "white" : "black"}`}
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -101,7 +119,7 @@ export default function Navbar() {
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M5 6.12305L17 18.123L14.5 15.623L12 13.123M5 18.123L17 5.87695"
-                stroke="white"
+                stroke={`${mode === "dark" ? "white" : "black"}`}
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
