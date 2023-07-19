@@ -36,7 +36,8 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    const prefersDarkMode =
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
     setMode(prefersDarkMode ? "dark" : "light")
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")

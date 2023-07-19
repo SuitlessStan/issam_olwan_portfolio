@@ -12,7 +12,7 @@ export default function ContactMe() {
 
     try {
       const data = new FormData(e.currentTarget)
-      await axios.post("http://localhost:3000/api/contact", data)
+      await axios.post("/api/contact", data)
 
       setShowAlert(true)
       setTimeout(() => setShowAlert(false), 3000)
@@ -29,21 +29,21 @@ export default function ContactMe() {
           If you are interested in my work or have any concerns, do not hesitate to send me a
           message!
         </span>
-        <div className="flex justify-center items-center flex-col w-full z-100 absolute">
+        <div className="message-progress">
           {loading && <div className="circular-progress"></div>}
           {showAlert && (
             <div
-              className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 w-full md:w-1/2"
+              className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
               role="alert">
               <p className="font-bold">Message Sent</p>
-              <p className="text-sm">Your message has been sent!</p>
+              <p className="text-sm">I&apos;ll be reaching out soon!</p>
             </div>
           )}
         </div>
 
         <div className="container my-5 dark:bg-Borders dark:text-white text-black bg-white px-4 rounded mx-auto md:w-2/5">
           <form
-            action="http://localhost:3000/api/contact"
+            action="/api/contact"
             method="POST"
             onSubmit={handleSubmit}
             className="py-5 flex flex-col gap-3">
@@ -84,7 +84,6 @@ export default function ContactMe() {
             <div className="input flex flex-col gap-3 justify-center items-start">
               <button
                 type="submit"
-                // onClick={(e) => e.preventDefault()}
                 className="w-full bg-primio py-4 px-4 rounded text-white dark:text-black">
                 Send
               </button>
