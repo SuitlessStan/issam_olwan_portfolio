@@ -32,7 +32,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <span className="block text-sm text-center">&copy; 2023 Technos Sophistes</span>
+      <span className="block text-sm text-center">&copy; 2023 Issam Productions</span>
     </>
   )
 }

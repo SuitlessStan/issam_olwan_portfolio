@@ -21,9 +21,9 @@ export default function Navbar() {
     const currentHour = date.getHours()
 
     if (currentHour >= 6 && currentHour < 20) {
-      return "sunny"
+      return "day"
     }
-    return "not sunny"
+    return "night"
   }
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -58,10 +58,10 @@ export default function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <span className="flex items-center justify-center gap-4">
           <span className="">
-            {timeOfDay() == "sunny" ? (
+            {timeOfDay() == "day" ? (
               <Link href={href} onClick={handleClick}>
                 <Image
-                  className="dark:bg-primio rounded w-12"
+                  className="dark:bg-white rounded w-12"
                   src="/images/sun.svg"
                   alt="sun_gif"
                   width={22}
@@ -72,7 +72,7 @@ export default function Navbar() {
               <>
                 <Link href={href} onClick={handleClick}>
                   <Image
-                    className="dark:bg-primio rounded h-8 w-9"
+                    className="dark:bg-white rounded h-8 w-9"
                     src="/images/moon.svg"
                     alt="moon_gif"
                     width={22}
