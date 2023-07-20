@@ -51,9 +51,9 @@ export default function AboutMe() {
   return (
     <>
       {/* About me */}
-      <div className="container flex flex-col md:flex-row gap-5 mx-auto p-5" id="about-me">
+      <div className="container flex flex-col md:flex-row gap-5 mx-auto p-5 mt-20" id="about-me">
         <div
-          className={`profile-image flex justify-center items-center px-5 ${
+          className={`profile-image flex justify-center items-center px-5 md:hidden ${
             pathName == "/about" ? " " : "md:hidden"
           }`}>
           <Image
@@ -106,24 +106,6 @@ export default function AboutMe() {
             pursuit of excellence, I&apos;m here to join forces and help bring your vision to life.
             Together, we can create something extraordinary.
           </span>
-          <button className="btn my-2 md:hidden flex gap-3 border dark:border-white border-black text-black dark:text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
-            <span>See More</span>
-            <svg
-              className="dark:hidden"
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8.16667 2.91663L12.25 6.99996M12.25 6.99996L8.16667 11.0833M12.25 6.99996L1.75 6.99996"
-                stroke="black"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
         </div>
       </div>
       {/* Skills */}

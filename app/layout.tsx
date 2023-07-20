@@ -10,7 +10,7 @@ config.autoAddCss = false
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Issam productions",
+  title: "Issam Productions",
   description: "portfolio web application for Issam Olwan",
 }
 
