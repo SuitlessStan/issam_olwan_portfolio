@@ -5,6 +5,7 @@ import { useState } from "react"
 export default function ContactMe() {
   const [loading, setLoading] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
+  const [showError, setShowError] = useState(false)
 
   const [phoneNumber, setPhoneNumber] = useState("")
   const [email, setEmail] = useState("")
@@ -43,11 +44,12 @@ export default function ContactMe() {
     try {
       const data = new FormData(e.currentTarget)
       await axios.post("/api/contact", data)
-
       setShowAlert(true)
       setTimeout(() => setShowAlert(false), 3000)
     } catch (err) {
       console.error("Error sending request : ", err)
+      setShowError(true)
+      setTimeout(() => setShowError(false), 3000)
     }
     setLoading(false)
   }
@@ -67,6 +69,18 @@ export default function ContactMe() {
               role="alert">
               <p className="font-bold">Message Sent</p>
               <p className="text-sm">I&apos;ll be reaching out soon!</p>
+            </div>
+          )}
+          {showError && (
+            <div className="message-progress">
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+                role="alert">
+                <strong className="font-bold">Holy smokes!</strong>
+                <span className="block sm:inline">
+                  Something went wrong while sending the message
+                </span>
+              </div>
             </div>
           )}
         </div>
