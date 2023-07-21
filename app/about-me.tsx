@@ -17,10 +17,10 @@ export default function AboutMe() {
           />
         </div>
         <div className="about-me">
-          <span className="font-bold text-2xl my-2">About me</span>
+          <span className="font-bold text-3xl my-2">About me</span>
           <br />
           <span className="my-2">
-            Welcome! I&apos;m <span className="rainbow-animation">ISSAM</span>. A Full Stack
+            Welcome! I&apos;m <span className="rainbow-animation text-xl">ISSAM</span>. A Full Stack
             Software Engineer who thrives on collaborative work and delivering outstanding digital
             solutions. With expertise in JavaScript, Node.js, and ReactJS, I believe in the power of
             teamwork to create remarkable products. My passion lies not only in writing efficient

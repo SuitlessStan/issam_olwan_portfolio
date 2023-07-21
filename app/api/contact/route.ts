@@ -28,9 +28,9 @@ export async function POST(request: NextRequest, response: NextResponse) {
   })
 
   const mailOptions = {
-    from: `${emailValue}`,
+    from: `My Portfolio`,
     to: `${process.env.EMAIL}`,
-    subject: `Message from contact me page from ${numberValue} - ${emailValue} `,
+    subject: `Message on contact me page from ${numberValue} - ${emailValue} `,
     text: `${messageValue}`,
   }
 
