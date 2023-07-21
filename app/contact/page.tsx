@@ -52,6 +52,7 @@ export default function ContactMe() {
       setTimeout(() => setShowError(false), 3000)
     }
     setLoading(false)
+    setMessage("")
   }
   return (
     <>
@@ -75,7 +76,7 @@ export default function ContactMe() {
             <div
               className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
               role="alert">
-              <strong className="font-bold">Oh no!</strong>
+              <strong className="font-bold block">Oh no!</strong>
               <span className="block sm:inline">
                 Something went wrong while sending the message
               </span>
