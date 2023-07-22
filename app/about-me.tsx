@@ -26,9 +26,9 @@ export default function AboutMe() {
             teamwork to create remarkable products. My passion lies not only in writing efficient
             code but also in collaborating with diverse teams to build innovative solutions.
           </span>
-          <button className="btn my-2 md:hidden flex gap-3 border dark:border-white border-black text-black dark:text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
-            <Link href="/about">
-              <span>See More</span>
+          <button className="btn my-2 md:hidden flex gap-3 border dark:border-white border-black text-black dark:text-white rounded py-2 px-2  hover:bg-primio hover:border-primio">
+            <Link href="/about" className="flex justify-center items-center gap-2">
+              <span className="pb-1 dark:p-0">See More</span>
               <svg
                 className="dark:hidden"
                 width="14"
