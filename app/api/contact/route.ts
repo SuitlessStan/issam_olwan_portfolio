@@ -30,7 +30,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   const mailOptions = {
     from: `My Portfolio`,
     to: `${process.env.EMAIL}`,
-    subject: `Message on contact me page from ${numberValue} - ${emailValue} `,
+    subject: `Message from ${numberValue} - ${emailValue} `,
     text: `${messageValue}`,
   }
 
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
     await transporter.sendMail(mailOptions)
     return NextResponse.json({ message: "Email sent successfully!" }, { status: 200 })
   } catch (err) {
-    return NextResponse.json({ message: `${err}` }, { status: 500 })
+    return NextResponse.json({ message: err }, { status: 500 })
   }
 
   /*
