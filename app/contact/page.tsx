@@ -1,6 +1,6 @@
 "use client"
 import axios from "axios"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export default function ContactMe() {
   const [loading, setLoading] = useState(false)
@@ -14,6 +14,12 @@ export default function ContactMe() {
   const [phoneNumberError, setPhoneNumberError] = useState<string | null>(null)
   const [emailError, setEmailError] = useState<string | null>(null)
   const [messageError, setMessageError] = useState<string | null>(null)
+
+  const ref = useRef(null)
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+  }
 
   const validatePhoneNumber = (number: string) => {
     if (!number || number.length < 5) {
@@ -40,14 +46,17 @@ export default function ContactMe() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
+    scrollToTop()
 
     try {
       const data = new FormData(e.currentTarget)
       await axios.post("/api/contact", data)
+
       setShowAlert(true)
       setTimeout(() => setShowAlert(false), 3000)
     } catch (err) {
       console.error("Error sending request : ", err)
+
       setShowError(true)
       setTimeout(() => setShowError(false), 3000)
     }
@@ -57,7 +66,9 @@ export default function ContactMe() {
   return (
     <>
       <div className="mx-2">
-        <span className="text-4xl text-center block mt-20">Let&apos;s talk</span>
+        <span className="text-4xl text-center block mt-20" ref={ref}>
+          Let&apos;s talk
+        </span>
         <span className="text-xs md:text-lg text-center block my-2">
           If you are interested in my work or have any concerns, do not hesitate to send me a
           message!
@@ -66,7 +77,7 @@ export default function ContactMe() {
           {loading && <div className="circular-progress"></div>}
           {showAlert && (
             <div
-              className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3"
+              className="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3"
               role="alert">
               <p className="font-bold">Message Sent</p>
               <p className="text-sm">I&apos;ll be reaching out soon!</p>
@@ -98,7 +109,7 @@ export default function ContactMe() {
                 className="w-full dark:bg-Rellenos py-4 px-4 border border-Gris rounded"
                 type="number"
                 name="phone_number"
-                placeholder="+"
+                placeholder="Phone number"
                 value={phoneNumber}
                 onChange={(e) => {
                   setPhoneNumber(e.target.value)
@@ -115,7 +126,7 @@ export default function ContactMe() {
                 className="w-full dark:bg-Rellenos py-4 px-4 border border-Gris rounded"
                 type="email"
                 name="email"
-                placeholder="something@somewhat.com"
+                placeholder="Your email"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value)
