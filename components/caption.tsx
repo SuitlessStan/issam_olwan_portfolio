@@ -44,13 +44,11 @@ export default function Caption() {
             {quotes.map((quote: Quote) => {
               return (
                 <span
-                  className="text-3xl block p-0 dark:text-primio text-black font-PlayfairDisaply py-0"
+                  className="text-3xl p-0 dark:text-primio text-black font-PlayfairDisaply py-0 flex gap-2"
                   key={quote.text}>
                   <>
                     {quote.text}
-                    <span className="text-sm font-Montserrat italic">{`
-                    ${quote.author ? " " + quote.author : " "}
-                    `}</span>
+                    <span className="text-sm font-Montserrat italic">{quote.author}</span>
                   </>
                 </span>
               )

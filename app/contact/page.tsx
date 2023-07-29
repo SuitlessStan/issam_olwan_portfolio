@@ -2,18 +2,39 @@
 import axios from "axios"
 import { useState, useRef } from "react"
 
+const validatePhoneNumber = (number: string) => {
+  if (!number || number.length < 5) {
+    return "Please enter a valid phone number."
+  }
+}
+
+const validateEmail = (email: string) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return email.trim() ? emailRegex.test(email) : false
+}
+
+const validateMessage = (message: string) => {
+  if (!message.trim()) {
+    return "Please enter a message."
+  }
+}
+
 export default function ContactMe() {
   const [loading, setLoading] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
-  const [showError, setShowError] = useState(false)
+  const [error, setError] = useState("")
 
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+  const [formData, setFormData] = useState({
+    phoneNumber: "",
+    email: "",
+    message: "",
+  })
 
-  const [phoneNumberError, setPhoneNumberError] = useState<string | null>(null)
-  const [emailError, setEmailError] = useState<string | null>(null)
-  const [messageError, setMessageError] = useState<string | null>(null)
+  const [formErrors, setFormErrors] = useState({
+    phoneNumberError: "",
+    emailError: "",
+    messageError: "",
+  })
 
   const ref = useRef(null)
 
@@ -21,32 +42,23 @@ export default function ContactMe() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
   }
 
-  const validatePhoneNumber = (number: string) => {
-    if (!number || number.length < 5) {
-      return "Please enter a valid phone number."
-    }
-    return null
-  }
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return "Please enter a valid email address."
-    }
-    return null
-  }
-
-  const validateMessage = (message: string) => {
-    if (!message.trim()) {
-      return "Please enter a message."
-    }
-    return null
-  }
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
     scrollToTop()
+
+    const { phoneNumber, email, message } = formData
+
+    setFormErrors({
+      phoneNumberError: !validatePhoneNumber(phoneNumber) ? "Invalid phone number." : "",
+      emailError: !validateEmail(email) ? "Invalid email format." : "",
+      messageError: !validateMessage(message) ? "No message to send." : "",
+    })
+
+    if (formErrors.phoneNumberError || formErrors.emailError || formErrors.messageError) {
+      setLoading(false)
+      return
+    }
 
     try {
       const data = new FormData(e.currentTarget)
@@ -56,13 +68,23 @@ export default function ContactMe() {
       setTimeout(() => setShowAlert(false), 3000)
     } catch (err) {
       console.error("Error sending request : ", err)
-
-      setShowError(true)
-      setTimeout(() => setShowError(false), 3000)
+      setError("Something went wrong while sending the message")
+      setTimeout(() => setError(""), 3000)
     }
     setLoading(false)
-    setMessage("")
   }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
+  }
+
+  const { phoneNumber, email, message } = formData
+  const { phoneNumberError, emailError, messageError } = formErrors
+
   return (
     <>
       <div className="mx-2">
@@ -83,14 +105,12 @@ export default function ContactMe() {
               <p className="text-sm">I&apos;ll be reaching out soon!</p>
             </div>
           )}
-          {showError && (
+          {error && (
             <div
               className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
               role="alert">
               <strong className="font-bold block">Oh no!</strong>
-              <span className="block sm:inline">
-                Something went wrong while sending the message
-              </span>
+              <span className="block sm:inline">{error}</span>
             </div>
           )}
         </div>
@@ -111,10 +131,7 @@ export default function ContactMe() {
                 name="phone_number"
                 placeholder="Phone number"
                 value={phoneNumber}
-                onChange={(e) => {
-                  setPhoneNumber(e.target.value)
-                  setPhoneNumberError(validatePhoneNumber(e.target.value))
-                }}
+                onChange={handleChange}
               />
               {phoneNumberError && <span className="error text-red-400">{phoneNumberError}</span>}
             </div>
@@ -128,10 +145,7 @@ export default function ContactMe() {
                 name="email"
                 placeholder="Your email"
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                  setEmailError(validateEmail(e.target.value))
-                }}
+                onChange={handleChange}
               />
               {emailError && <span className="error text-red-400">{emailError}</span>}
             </div>
@@ -146,10 +160,7 @@ export default function ContactMe() {
                 name="message"
                 style={{ resize: "none" }}
                 value={message}
-                onChange={(e) => {
-                  setMessage(e.target.value)
-                  setMessageError(validateMessage(e.target.value))
-                }}
+                onChange={handleChange}
                 placeholder="Your message"></textarea>
               {messageError && <span className="error text-red-400">{messageError}</span>}
             </div>
