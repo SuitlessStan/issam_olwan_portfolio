@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel"
 type Quote = {
   text: string
   author: string
+  quote?: string
 }
 
 export default function Caption() {
@@ -21,7 +22,14 @@ export default function Caption() {
       responseLength = res.data.length
       randomIndex = Math.floor(Math.random() * responseLength)
 
-      setQuotes(res.data.slice(randomIndex, randomIndex + 20))
+      const modifiedQuotes = res.data.slice(randomIndex, randomIndex + 20).map((quote: Quote) => {
+        return {
+          quote: quote.text,
+          author: quote.author.replace(", type.fit", " "),
+        }
+      })
+
+      setQuotes(modifiedQuotes)
     })
     return () => {
       setQuotes([])
@@ -30,7 +38,7 @@ export default function Caption() {
 
   return (
     <>
-      <div className="container w-full h-full my-2 mx-auto text-center rounded p-5 md:w-5/6">
+      <div className="container w-full h-full mx-auto text-center rounded p-2 md:w-5/6">
         {quotes.length > 0 && (
           <Carousel
             className="w-full h-full p-0"
@@ -43,14 +51,14 @@ export default function Caption() {
             showStatus={false}>
             {quotes.map((quote: Quote) => {
               return (
-                <span
-                  className="text-3xl p-0 dark:text-primio text-black font-PlayfairDisaply py-0 flex gap-2"
-                  key={quote.text}>
-                  <>
-                    {quote.text}
-                    <span className="text-sm font-Montserrat italic">{quote.author}</span>
-                  </>
-                </span>
+                <div
+                  key={quote.text + quote.author}
+                  className="flex gap-2 text-3xl text-center justify-center items-center p-0 dark:text-primio text-black font-PlayfairDisaply py-0">
+                  {quote.quote}
+                  <span className="text-sm font-Montserrat italic">
+                    {quote.author ? quote.author : " "}
+                  </span>
+                </div>
               )
             })}
           </Carousel>
