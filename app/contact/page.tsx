@@ -59,14 +59,13 @@ export default function ContactMe() {
       messageError: validateMessage(message),
     })
 
-    if (phoneNumberError || emailError || messageError) {
+    if (formErrors.phoneNumberError || formErrors.emailError || formErrors.messageError) {
       setLoading(false)
       return
     }
 
     try {
       const data = new FormData(e.currentTarget)
-      console.log("data sent ", data)
       await axios.post("/api/contact", data)
 
       setShowAlert(true)
