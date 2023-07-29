@@ -30,10 +30,14 @@ export default function ContactMe() {
     message: "",
   })
 
-  const [formErrors, setFormErrors] = useState({
-    phoneNumberError: "",
-    emailError: "",
-    messageError: "",
+  const [formErrors, setFormErrors] = useState<{
+    phoneNumberError: string | null | undefined
+    emailError: string | null | undefined
+    messageError: string | null | undefined
+  }>({
+    phoneNumberError: null,
+    emailError: null,
+    messageError: null,
   })
 
   const ref = useRef(null)
@@ -50,18 +54,19 @@ export default function ContactMe() {
     const { phoneNumber, email, message } = formData
 
     setFormErrors({
-      phoneNumberError: !validatePhoneNumber(phoneNumber) ? "Invalid phone number." : "",
-      emailError: !validateEmail(email) ? "Invalid email format." : "",
-      messageError: !validateMessage(message) ? "No message to send." : "",
+      phoneNumberError: validatePhoneNumber(phoneNumber),
+      emailError: validateEmail(email) ? null : "Please enter a valid email",
+      messageError: validateMessage(message),
     })
 
-    if (formErrors.phoneNumberError || formErrors.emailError || formErrors.messageError) {
+    if (phoneNumberError || emailError || messageError) {
       setLoading(false)
       return
     }
 
     try {
       const data = new FormData(e.currentTarget)
+      console.log("data sent ", data)
       await axios.post("/api/contact", data)
 
       setShowAlert(true)
@@ -128,7 +133,7 @@ export default function ContactMe() {
               <input
                 className="w-full dark:bg-Rellenos py-4 px-4 border border-Gris rounded"
                 type="number"
-                name="phone_number"
+                name="phoneNumber"
                 placeholder="Phone number"
                 value={phoneNumber}
                 onChange={handleChange}

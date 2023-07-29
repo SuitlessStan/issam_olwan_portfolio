@@ -10,7 +10,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
 
   const emailValue = formData.get("email")
   const messageValue = formData.get("message")
-  const numberValue = formData.get("phone_number")
+  const numberValue = formData.get("phoneNumber")
 
   if (!messageValue || !numberValue || !emailValue) {
     return NextResponse.json({ message: "please fill all required fields!" }, { status: 400 })
@@ -40,15 +40,4 @@ export async function POST(request: NextRequest, response: NextResponse) {
   } catch (err) {
     return NextResponse.json({ message: err }, { status: 500 })
   }
-
-  /*
-  Promis-ified solution - It looks nice but its not as clean 
-  */
-  // return new Promise((resolve) => {
-  //   transporter.sendMail(mailOptions, (err) => {
-  //     const status = err ? 500 : 200
-  //     const message = err?.toString() ?? "Email sent successfully!"
-  //     resolve(NextResponse.json({ message }, { status }))
-  //   })
-  // })
 }
