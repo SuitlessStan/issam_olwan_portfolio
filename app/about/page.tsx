@@ -13,25 +13,25 @@ export default function AboutMe() {
       icon: faDocker,
       title: "Docker",
       description:
-        "I possess strong skills in Dockerizing applications, which involves packaging applications and their dependencies into lightweight, portable containers. My expertise includes proficiency in Docker, the ability to package applications and define Dockerfiles, creating consistent and isolated environments, ensuring portability and scalability, optimizing resource utilization, integrating Docker into CI/CD pipelines, and troubleshooting and debugging container-related issues. With these skills, I can efficiently deploy and manage applications, streamline the development process, and improve overall system performance and reliability.",
+        "I am proficient in Docker, skilled in packaging applications into portable containers, defining Dockerfiles, optimizing resource usage, and integrating Docker into CI/CD pipelines. I can efficiently deploy and manage applications, improving system performance and reliability.",
     },
     {
       icon: faLinux,
       title: "Linux",
       description:
-        "I am an experienced Linux professional with a strong expertise in various aspects of Linux system administration. My skills include thorough knowledge of Linux operating systems, proficient command-line usage, system security implementation, and efficient shell scripting and automation. I am adept at handling system installation, configuration, and maintenance, ensuring system security through user management and robust authentication mechanisms. With my expertise in Linux, I can optimize workflows, automate tasks, and effectively manage and secure Linux-based systems.",
+        "I am an experienced Linux professional with expertise in system administration, including command-line usage, system security, shell scripting, and automation. I handle installation, configuration, and maintenance, ensuring robust system security. My skills optimize workflows, automate tasks, and effectively manage Linux-based systems.",
     },
     {
       icon: faNodeJs,
       title: "NodeJs",
       description:
-        "As a Node.js backend engineer, I bring extensive experience in optimizing API performance, designing and developing applications, and implementing efficient data storage solutions. I have collaborated with development teams to enhance API performance by migrating data from MySQL to MongoDB, resulting in significant speed improvements. I have designed and developed a dockerized car parking system using Node.js, Knex.js, and MySQL, ensuring seamless integration of models and databases and conducting rigorous testing. I have also built an S3 bucket POST API, enabling clients to store images efficiently. My expertise in Node.js backend engineering enables me to develop high-performing applications, optimize API functionality, and create efficient data storage solutions.",
+        "I am a Node.js backend engineer with expertise in optimizing API performance, designing applications, and implementing efficient data storage using MongoDB and MySQL. I have developed a dockerized car parking system and an S3 bucket POST API for efficient image storage. My skills enable me to build high-performing applications and optimize API functionality.",
     },
     {
       icon: faReact,
       title: "ReactJs",
       description:
-        "With my experience in React.js, I have made valuable contributions to open source platforms like AnyoneCanCode and freeCodeCamp. As a React.js developer, I have gained expertise in building interactive user interfaces, implementing component-based architectures, and leveraging the latest React.js features. Through my contributions to open source projects, I have demonstrated my ability to collaborate with a diverse community and make impactful contributions to the React.js ecosystem. My experience in React.js positions me as a skilled developer capable of creating dynamic and user-friendly web applications.",
+        "As an experienced React.js developer, I've contributed to open-source platforms like AnyoneCanCode and freeCodeCamp. My expertise lies in building interactive user interfaces and leveraging the latest React.js features. I have demonstrated collaboration with diverse communities and a talent for creating dynamic web applications.",
     },
     {
       icon: faServer,
@@ -43,7 +43,7 @@ export default function AboutMe() {
       icon: faCode,
       title: "Typescript",
       description:
-        "I have extensive experience in building web applications using TypeScript for both the frontend and backend. With my expertise, I have successfully developed robust and scalable applications, leveraging the benefits of static typing, enhanced code maintainability, and improved developer productivity. As a full-stack developer, I am proficient in using TypeScript to build interactive user interfaces on the frontend, implementing component-based architectures, and leveraging frameworks such as React.js. On the backend, I have applied TypeScript to develop APIs, implement data models, and interact with databases efficiently. My experience in building web applications with TypeScript encompasses the entire development stack, enabling me to create seamless and cohesive applications with enhanced reliability and maintainability.",
+        "As a full-stack developer with extensive TypeScript experience, I build robust and scalable web applications with enhanced code maintainability and developer productivity. I create interactive user interfaces with React.js on the frontend and efficient APIs with data models on the backend, ensuring seamless application development throughout the entire stack.",
     },
   ]
 
