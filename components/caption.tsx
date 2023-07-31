@@ -38,7 +38,7 @@ export default function Caption() {
 
   return (
     <>
-      <div className="container w-full h-full mx-auto text-center rounded p-2 md:w-5/6">
+      <div className="container w-full h-full mx-auto text-center rounded my-5 p-1 md:w-5/6">
         {quotes.length > 0 && (
           <Carousel
             className="w-full h-full p-0"
@@ -53,9 +53,9 @@ export default function Caption() {
               return (
                 <div
                   key={quote.text + quote.author}
-                  className="flex gap-2 text-3xl text-center justify-center items-center p-0 dark:text-primio text-black font-PlayfairDisaply py-0">
+                  className="flex gap-2 text-xl md:text-3xl text-center justify-center items-center p-0 dark:text-primio text-black font-PlayfairDisaply py-0">
                   {quote.quote}
-                  <span className="text-sm font-Montserrat italic">
+                  <span className="text-xs font-Montserrat italic relative top-2">
                     {quote.author ? quote.author : " "}
                   </span>
                 </div>
