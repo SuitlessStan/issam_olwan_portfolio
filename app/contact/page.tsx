@@ -171,8 +171,9 @@ export default function ContactMe() {
             <div className="input flex flex-col gap-3 justify-center items-start">
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-primio py-4 px-4 rounded text-white dark:text-black">
-                Send
+                {loading ? "Sending..." : "Send"}
               </button>
             </div>
           </form>
