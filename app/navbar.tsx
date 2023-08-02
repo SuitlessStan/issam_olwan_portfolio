@@ -54,7 +54,7 @@ export default function Navbar() {
   }, [])
 
   return (
-    <nav className="dark:bg-black bg-white fixed w-full z-10 top-0 opacity-75">
+    <nav className="dark:bg-black bg-white fixed w-full z-10 top-0 opacity-90 md:opacity-75">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <span className="flex items-center justify-center gap-4">
           <span className="">
@@ -131,7 +131,7 @@ export default function Navbar() {
         <div
           className={`${open ? "block" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-default">
-          <ul className="font-medium flex flex-col md:flex-row mt-5 rounded-lg text-center md:space-x-8 md:mt-0 dark:bg-primio dark:md:bg-black border-gray-700">
+          <ul className="font-medium flex flex-col md:flex-row mt-5 rounded-lg text-center md:space-x-8 md:mt-0 dark:bg-primio dark:md:bg-black border-gray-700 ">
             <li>
               <Link
                 href="/"
@@ -149,14 +149,14 @@ export default function Navbar() {
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/services"
                 onClick={handleLinkClick}
                 className="block py-2 pl-3 pr-4 md:p-0 rounded font-Ubuntu text-sm md:text-lg border-b-4 border-transparent md:hover:border-primio transition-colors">
                 Services
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="/contact"
