@@ -17,7 +17,7 @@ export default function Intro() {
           <button className="btn text-lg bg:black border dark:border-white text-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
             See projects
           </button>
-          <button className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
+          <a className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio" href="https://docs.google.com/document/d/e/2PACX-1vTVLccsMVDmC39cxgvm2tHUCMVDxEYdGrauQRS6e1YpkyeqxN8ZfAErCzQB3dIcgg/pub">
             <svg
               width="21"
               height="20"
@@ -32,7 +32,7 @@ export default function Intro() {
               />
             </svg>
             Download CV
-          </button>
+          </a>
         </div>
       </div>
     </div>
