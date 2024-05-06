@@ -1,5 +1,6 @@
 "use client"
 import axios from "axios"
+import Link from "next/link"
 import { useState, useRef } from "react"
 
 const validatePhoneNumber = (number: string) => {
@@ -23,6 +24,7 @@ export default function ContactMe() {
   const [loading, setLoading] = useState(false)
   const [showAlert, setShowAlert] = useState(false)
   const [error, setError] = useState("")
+  const [sent, isSent] = useState(false)
 
   const [formData, setFormData] = useState({
     phoneNumber: "",
@@ -70,6 +72,7 @@ export default function ContactMe() {
 
       setShowAlert(true)
       setTimeout(() => setShowAlert(false), 3000)
+      setTimeout(() => isSent((prevState) => !prevState), 5000)
     } catch (err) {
       console.error("Error sending request : ", err)
       setError("Something went wrong while sending the message")
@@ -123,6 +126,7 @@ export default function ContactMe() {
           <form
             action="/api/contact"
             method="POST"
+            encType="multipart/form-data"
             onSubmit={handleSubmit}
             className="py-5 flex flex-col gap-3">
             <div className="input flex flex-col gap-3 justify-center items-start">
@@ -169,6 +173,17 @@ export default function ContactMe() {
               {messageError && <span className="error text-red-400">{messageError}</span>}
             </div>
             <div className="input flex flex-col gap-3 justify-center items-start">
+              {sent && (
+                <span className="text-md">
+                  If you want to see your message you can do that{" "}
+                  <Link
+                    href="/me"
+                    className="border-transparent border-b border-black dark:border-white pb-1">
+                    {" "}
+                    here
+                  </Link>
+                </span>
+              )}
               <button
                 type="submit"
                 disabled={loading}

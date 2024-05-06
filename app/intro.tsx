@@ -1,4 +1,5 @@
 import MatrixEffect from "../components/matrix-effect"
+import Link from "next/link"
 
 export default function Intro() {
   return (
@@ -14,9 +15,11 @@ export default function Intro() {
           </div>
         </div>
         <div className="buttons flex flex-col md:flex-row md:gap-1 gap-5 justify-center items-center z-10">
-          <button className="btn text-lg bg:black border dark:border-white text-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
-            See projects
-          </button>
+          <Link href="/projects">
+            <button className="btn text-lg bg:black border dark:border-white text-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
+              See projects
+            </button>
+          </Link>
           <button className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
             <svg
               width="21"

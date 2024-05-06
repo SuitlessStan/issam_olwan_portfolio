@@ -16,6 +16,7 @@ module.exports = {
         Rellenos: "#1C1E22",
         Gris: "#A0A0A1",
         Borders: "#26292D",
+        whitesmoke: "#f4f4f4",
       },
       fontFamily: {
         Ubuntu: ["Ubuntu"],
@@ -29,5 +30,6 @@ module.exports = {
     bodyParser: false,
     externalResolver: true,
   },
+  // darkMode: "class",
   plugins: [],
 }
