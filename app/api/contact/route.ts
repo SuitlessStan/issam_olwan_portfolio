@@ -1,19 +1,7 @@
 import { NextResponse, NextRequest } from "next/server"
 import nodemailer from "nodemailer"
-import Pusher from "pusher"
-
-const pusher = new Pusher({
-  appId: "1649346",
-  key: "cd269af2f22ad75d03e6",
-  secret: "c1af2bfa2865f49bc32c",
-  cluster: "eu",
-  useTLS: true,
-})
 
 export async function GET(request: NextRequest) {
-  pusher.trigger("my-channel", "my-event", {
-    message: "hello world",
-  })
   return NextResponse.json({ message: "Hello from contacts" }, { status: 200 })
 }
 
