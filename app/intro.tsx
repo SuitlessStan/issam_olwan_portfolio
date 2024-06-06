@@ -20,7 +20,7 @@ export default function Intro() {
               See projects
             </button>
           </Link>
-          <Link href="https://docs.google.com/document/d/1bw8rkwIDLuc5J94gCKFbtixZRVHAyvke/edit?usp=sharing&ouid=102702633641757136498&rtpof=true&sd=true">
+          <Link href="https://docs.google.com/document/d/1rqLBTCQ4Oej8XjjiIRTfGaAYrqcs0ksz/edit?rtpof=true">
             <button className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
               <svg
                 width="21"
