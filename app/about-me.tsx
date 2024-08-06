@@ -1,6 +1,9 @@
 import Image from "next/image"
 import ProfilePicture from "../public/images/profile-picture.jpg"
 import Link from "next/link"
+import LensEffectText from "@/components/lens-effect"
+
+const rainbowAnimation = () => <span className="rainbow-animation text-3xl">ISSAM</span>
 
 export default function AboutMe() {
   return (
@@ -17,15 +20,14 @@ export default function AboutMe() {
           />
         </div>
         <div className="about-me">
-          <span className="font-bold text-4xl block">About me</span>
-          <span className="my-2 block">
-            Welcome! I&apos;m <span className="rainbow-animation text-xl">ISSAM</span>. A Full Stack
-            Software Engineer who thrives on collaborative work and delivering outstanding digital
-            solutions. With expertise in JavaScript, Node.js, and ReactJS, I believe in the power of
-            teamwork to create remarkable products. My passion lies not only in writing efficient
-            code but also in collaborating with diverse teams to build innovative solutions.
-          </span>
-          <button className="btn my-2 md:hidden flex gap-3 border dark:border-white border-black text-black dark:text-white rounded py-2 px-2  hover:bg-primio hover:border-primio">
+          <LensEffectText>
+            {`Hi, I'm `}
+            {rainbowAnimation()}
+            {`. a Full Stack Software Engineer. I excel in teamwork and delivering exceptional digital solutions, focusing on efficient code and innovative collaborations.`}
+          </LensEffectText>
+          <button
+            type="button"
+            className="btn my-2 md:hidden flex gap-3 border dark:border-white border-black text-black dark:text-white rounded py-2 px-2  hover:bg-primio hover:border-primio">
             <Link href="/about" className="flex justify-center items-center gap-2">
               <span className="pb-1 dark:p-0">See More</span>
               <svg
