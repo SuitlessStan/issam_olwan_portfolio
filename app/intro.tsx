@@ -11,7 +11,7 @@ export default function Intro() {
     anime({
       targets: nameRef.current,
       scale: [0.5, 1.2],
-      duration: 1500,
+      duration: 3500,
       easing: "easeInOutQuad",
       complete: () =>
         anime({
