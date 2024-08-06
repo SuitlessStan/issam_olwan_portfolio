@@ -1,14 +1,37 @@
 import MatrixEffect from "../components/matrix-effect"
 import Link from "next/link"
+import { useEffect, useRef } from "react"
+import anime from "animejs"
 
 export default function Intro() {
+  const nameRef = useRef(null)
+  const resumeButton = useRef(null)
+
+  useEffect(() => {
+    anime({
+      targets: nameRef.current,
+      scale: [0.5, 1.2],
+      duration: 1500,
+      easing: "easeInOutQuad",
+      complete: () =>
+        anime({
+          targets: resumeButton.current,
+          rotate: [0, 0.3, 0.5, 0.7, 1],
+          duration: 5000,
+          easing: "easeInOutQuad",
+        }),
+    })
+  }, [])
+
   return (
     <div className="flex justify-center items-center" id="intro">
       <MatrixEffect />
       <div className="absolute">
         <div className="intro-text my-4">
           <h1 className="text-5xl md:text-7xl my-3 font-Ubuntu block text-center">
-            <span className="text-primio">Issam Olwan</span>
+            <div className="initial-scale" ref={nameRef}>
+              <span className="text-primio">Issam Olwan</span>
+            </div>
           </h1>
           <div className="typewriter">
             <h2 className="text-lg md:text-4xl">Fullstack Software Engineer</h2>
@@ -21,8 +44,11 @@ export default function Intro() {
             </button>
           </Link>
           <Link href="https://docs.google.com/document/d/1rqLBTCQ4Oej8XjjiIRTfGaAYrqcs0ksz/edit?usp=sharing&ouid=102702633641757136498&rtpof=true&sd=true">
-            <button className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
+            <button
+              type="button"
+              className="btn text-lg flex border dark:border-white text-white rounded py-2 px-2 justify-center items-center hover:bg-primio hover:border-primio">
               <svg
+                ref={resumeButton}
                 width="21"
                 height="20"
                 viewBox="0 0 21 20"

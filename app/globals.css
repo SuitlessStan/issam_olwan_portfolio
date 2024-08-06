@@ -51,6 +51,10 @@
 
 /* Homepage */
 
+.initial-scale {
+  transform: scale(0.5);
+}
+
 .intro-text {
   width: fit-content;
   width: auto;
