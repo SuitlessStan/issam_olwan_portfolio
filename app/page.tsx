@@ -8,10 +8,10 @@ export default function Home() {
     <>
       <main>
         <Intro />
-        <Caption />
+        <Caption className="hidden md:block" />
       </main>
       <section>
-        <AboutMe />
+        <AboutMe className="hidden md:block" />
       </section>
     </>
   )

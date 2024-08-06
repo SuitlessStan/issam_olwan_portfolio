@@ -39,7 +39,9 @@ export default function Intro() {
         </div>
         <div className="buttons flex flex-col md:flex-row md:gap-1 gap-5 justify-center items-center z-10">
           <Link href="/projects">
-            <button className="btn text-lg bg:black border dark:border-white text-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
+            <button
+              type="button"
+              className="btn text-lg bg:black border dark:border-white text-white py-2 px-2 rounded hover:bg-primio hover:border-primio">
               See projects
             </button>
           </Link>

@@ -3,12 +3,12 @@ import ProfilePicture from "../public/images/profile-picture.jpg"
 import Link from "next/link"
 import LensEffectText from "@/components/lens-effect"
 
-const rainbowAnimation = () => <span className="rainbow-animation text-3xl">ISSAM</span>
+const rainbowAnimation = () => <span className="rainbow-animation text-lg md:text-3xl">ISSAM</span>
 
-export default function AboutMe() {
+export default function AboutMe({ className }: { className: string }) {
   return (
     <>
-      <div className="container flex flex-col md:flex-row gap-5 mx-auto px-3">
+      <div className={`container flex flex-col md:flex-row gap-5 mx-auto px-3 ${className}`}>
         <div className="profile-image flex justify-center items-center  md:hidden">
           <Image
             className="rounded w-full h-full"
@@ -23,7 +23,7 @@ export default function AboutMe() {
           <LensEffectText>
             {`Hi, I'm `}
             {rainbowAnimation()}
-            {`. a Full Stack Software Engineer. I excel in teamwork and delivering exceptional digital solutions, focusing on efficient code and innovative collaborations.`}
+            {`. a Full Stack Software Engineer. I excel in teamwork and delivering exceptional digital solutions, focusing on efficient code and innovative collaborations. Let's connect!`}
           </LensEffectText>
           <button
             type="button"

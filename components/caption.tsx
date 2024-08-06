@@ -9,7 +9,7 @@ type Quote = {
   quote?: string
 }
 
-export default function Caption() {
+export default function Caption({ className }: { className: string }) {
   const [quotes, setQuotes] = useState<Quote[]>([])
 
   useEffect(() => {
@@ -38,7 +38,8 @@ export default function Caption() {
 
   return (
     <>
-      <div className="container w-full h-full mx-auto text-center rounded my-5 p-1 md:w-5/6">
+      <div
+        className={`container w-full h-full mx-auto text-center rounded my-5 p-1 md:w-5/6 ${className}`}>
         {quotes.length > 0 && (
           <Carousel
             className="w-full h-full p-0"

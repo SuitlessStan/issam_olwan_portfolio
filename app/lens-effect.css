@@ -5,7 +5,7 @@
 }
 
 .lens-effect-text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   transition: transform 0.8s ease;
   cursor: pointer;
   display: inline-block;
@@ -13,19 +13,23 @@
   overflow: hidden;
 }
 
-/* .lens-effect-text::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease;
-} */
+/* Media query for small screens (e.g., phones) */
+@media (max-width: 600px) {
+  .lens-effect-text {
+    font-size: 0.7rem; /* Adjust font size for small screens */
+  }
+}
 
-/* .lens-effect-text:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-} */
+/* Media query for medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .lens-effect-text {
+    font-size: 0.9rem; /* Adjust font size for medium screens */
+  }
+}
+
+/* Media query for large screens (e.g., desktops) */
+@media (min-width: 1201px) {
+  .lens-effect-text {
+    font-size: 1.2rem; /* Adjust font size for large screens */
+  }
+}
